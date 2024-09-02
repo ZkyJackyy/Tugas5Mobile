@@ -35,20 +35,20 @@ class pdiskon : AppCompatActivity() {
         btn.setOnClickListener() {
             val nilai = inpt.text.toString().toInt()
 
-            if (nilai < 100000) {
-                hsl.setText(nilai)
+            if (nilai >=0 && nilai <100000) {
+                hsl.setText("kamu tidak mendapatan diskon, maka total belanja"+nilai)
             }
-            else if (nilai >= 100001 && nilai <= 500000) {
+            else if (nilai >= 100000 && nilai < 500000) {
                 val ttl = nilai - (nilai * 0.1)
-                hsl.setText("total belanja = " + ttl)
+                hsl.setText("kamu mendapatkan diskon 10%, maka total belanja = " + ttl)
             }
-            else if (nilai >= 500001 && nilai <= 1000000) {
+            else if (nilai >= 500000 && nilai <= 1000000) {
                 val ttl = nilai - (nilai * 0.2)
-                hsl.setText("total belanja = " + ttl)
+                hsl.setText("kamu mendapatkan diskon 20%, maka total belanja = " + ttl)
             }
             else {
                 val ttl = nilai - (nilai * 0.3)
-                hsl.setText("total belanja = " + ttl)
+                hsl.setText("kamu mendapatkan diskon 30%,maka total belanja = " + ttl)
             }
         }
 
